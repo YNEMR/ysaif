@@ -1,0 +1,97 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("IMG_5679.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    padding: 30px;
+}
+
+/* طبقة شفافة فوق الصورة */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.love-card {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 550px;
+
+    padding: 40px 30px;
+    text-align: center;
+    color: white;
+
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #ffb6c9;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.sentence {
+    font-size: 20px;
+    line-height: 2;
+    margin: 20px 0;
+    padding: 12px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.heart {
+    font-size: 35px;
+    margin-top: 20px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* للموبايل */
+@media (max-width: 480px) {
+    .love-card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .sentence {
+        font-size: 17px;
+    }
+}
